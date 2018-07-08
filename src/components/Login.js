@@ -1,34 +1,45 @@
 import React, { Component } from 'react'
 import { Card, Image, Divider, Dropdown, Button } from 'semantic-ui-react'
-//import { Redirect } from 'react-router-dom'
-//import { users } from '../utils/_DATA'
+import { setAuthedUser } from '../actions/authedUser';
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 var logo = require('../assets/icons/React-Redux.jpeg')
+
 class Login extends Component {
+    state = {
+        userId:  null
+    }
+    static defaultProps = {
+        authUser: null,
+        location: null,
+      }
 
-    tempUsers = [
-         {
-            text: 'Bob',
-            value: 'bob',
-            image: { avatar: true, src: require('../assets/images/bob.jpeg') },
-        },
-        {
-            text: 'Alice',
-            value: 'alice',
-            image: { avatar: true, src: require('../assets/images/alice.jpeg') },
-        },
-        {
-            text: 'Carol',
-            value: 'carol',
-            image: { avatar: true, src: require('../assets/images/carol.jpeg') },
-        }
-    ]
-
+    handleDropdownSelection = (e, data) => {
+        e.preventDefault()
+        const id = data.value
+        this.setState(() => ({
+            userId: id
+        }))
+    }
     handleLogin = (e) => {
         e.preventDefault()
-        //Todo Redirect
+        const { dispatch } = this.props
+        if(this.state.userId !== null) {
+            dispatch(setAuthedUser(this.state.userId))
+        }
+        else {
+            // Todo
+        }
     }
 
     render() {
+        const { authedUser,location } = this.props
+        const { from } = location.state || { from: { pathname: '/' }}
+        if(authedUser !== null) {
+            return (
+                <Redirect to={from} />
+            )
+        }
         return(
             <div className='login-container'>
             <Card fluid>
@@ -39,11 +50,31 @@ class Login extends Component {
                 <Divider fitted/>
                 <Image src ={ logo } size='small' centered />
                 <p style={{textAlign:'center',color:"#00b5ad", fontSize:'18px', fontWeight:'bold'}}>Sign In</p>
-                <Dropdown placeholder='Select User'  selection options={this.tempUsers} />
-                <Button color='teal' style={{marginTop:'20px', marginBottom:'20px'}} onClick={this.handleLogin}>Sign In</Button>
+                <Dropdown placeholder='Select User'  selection options={this.props.userDetails} onChange={this.handleDropdownSelection} />
+                <Button color='teal' style={{ justifyContent:'center',marginTop:'20px', marginBottom:'20px'}} onClick={this.handleLogin}>Sign In</Button>
             </Card>
             </div>
         )
     }
 }
-export default Login
+
+function mapStateToProps({users, authedUser}) {
+    const userDetails = Object.keys(users)
+        .map((user) => {
+            const userStrippedDetails = {
+                text: users[user].name,
+                value: users[user].id,
+                image: {
+                    avatar: true,
+                    src: users[user].avatarURL
+                }
+            }
+            return(userStrippedDetails)
+        })
+    return {
+        userDetails,
+        authedUser
+    }
+}
+
+export default connect(mapStateToProps)(Login)

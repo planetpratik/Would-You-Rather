@@ -7,12 +7,95 @@ body {
   font-family: sans-serif;
 }
 
-.login-container {
+li {
+  list-style-type: none;
+  margin-top: 15px;
+}
+
+li:first-child {
+  margin-top: 0;
+}
+
+.content {
+  justify-content: center;
+}
+
+.verticle-divider {
+  border-right: 1px solid #d4d4d5;
+  height: 90px;
+  position: absolute;
+  top:30%;
+}
+
+.dashboard-list-question-info {
   display:flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: center;
+  align-items: left;
+  position: absolute;
+  top:25%;
+  height: 110 px;
+  margin-top: 10px;
+}
+
+.login-container {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 5%;
   margin-top: 3%;
-  min-width: 350px;
-  max-width: 400px;
+  justify-content: center;
+}
+
+.dashboard-questions-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  justify-content: center;
+}
+
+.dashboard-list-container {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.question-list-card {
+  margin-top: 10px;
+}
+
+@media only screen and ( max-width: 500px ) {
+  .dashboard-questions-container {width: 90%; max-width: 600; }
+  .login-container {width: 80%; }
+  .dashboard-list-container{width: 100%}
+  .verticle-divider{left:35%}
+  .verticle-divider{margin-left:10px}
+  .dashboard-list-question-info{left:45%}
+  .dashboard-list-question-info{width:52%}
+}
+
+@media only screen and ( min-width: 500px ) {
+  .dashboard-questions-container {width:80%; }
+  .login-container {width: 25%; }
+  .dashboard-list-container{width: 100%}
+  .verticle-divider{left:30%}
+  .dashboard-list-question-info{left:35%}
+  .dashboard-list-question-info{width:62%}
+}
+
+@media only screen and ( min-width: 700px ) {
+  .dashboard-questions-container {width:60%; }
+  .login-container {width: 25%; }
+  .dashboard-list-container{width: 100%}
+  .verticle-divider{left:30%}
+  .dashboard-list-question-info{left:35%}
+  .dashboard-list-question-info{width:62%}
+}
+
+@media only screen and (min-width: 1150px ) {
+  .dashboard-questions-container {width:40%; }
+  .login-container {width: 25%; }
+  .dashboard-list-container{width: 100%}
+  .verticle-divider{left:30%}
+  .dashboard-list-question-info{left:35%}
+  .dashboard-list-question-info{width:62%}
 }

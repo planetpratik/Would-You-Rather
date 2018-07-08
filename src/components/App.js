@@ -7,8 +7,16 @@ import Home from './Home'
 import NewQuestion from './NewQuestion'
 import LeaderBoard from './LeaderBoard'
 import PrivateRoute from './PrivateRoute'
+import { connect } from 'react-redux'
+import { handleInitialData } from '../actions/shared';
 
 class App extends Component {
+  componentDidMount() {
+    const { dispatch, loading } = this.props
+    if(loading === true) {
+      dispatch(handleInitialData())
+   }
+  }
   render() {
     return (
     <Router>
@@ -16,14 +24,17 @@ class App extends Component {
           <Navbar/>
           <div>
             <LoadingBar/>
-            <div>
+            { this.props.loading === true
+              ? null
+              : <div>
               <Switch>
                 <Route path='/login' exact component={Login} />
-                <PrivateRoute path='/' exact  component={Home} />
+                <PrivateRoute path='/' exact component={Home} />
                 <PrivateRoute path='/add' exact component={NewQuestion} />
                 <PrivateRoute path='/leaderboard' exact component={LeaderBoard} />
               </Switch>
             </div>
+              }
           </div>
       </Fragment>
     </Router>
@@ -31,4 +42,18 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps({users, authedUser}) {
+  return {
+    loading: isEmpty(users)
+  }
+}
+
+function isEmpty(obj) {
+  for(var key in obj) {
+      if(obj.hasOwnProperty(key))
+          return false
+  }
+  return true
+}
+
+export default connect(mapStateToProps)(App)
