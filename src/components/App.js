@@ -6,6 +6,7 @@ import Login from './Login'
 import Home from './Home'
 import NewQuestion from './NewQuestion'
 import LeaderBoard from './LeaderBoard'
+import Poll from './Poll'
 import PrivateRoute from './PrivateRoute'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared';
@@ -31,6 +32,7 @@ class App extends Component {
                 <Route path='/login' exact component={Login} />
                 <PrivateRoute path='/' exact component={Home} />
                 <PrivateRoute path='/add' exact component={NewQuestion} />
+                <PrivateRoute path='/questions/:question_id' exact component={Poll} />
                 <PrivateRoute path='/leaderboard' exact component={LeaderBoard} />
               </Switch>
             </div>
