@@ -128,6 +128,17 @@ li:first-child {
   flex-direction:row;
 }
 
+.poll-answered-card-container {
+  display: flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+}
+
+.poll-answered-card-content {
+  display: flex;
+  flex-direction:row;
+}
+
 @media only screen and ( max-width: 500px ) {
   .dashboard-questions-container {width: 90%; max-width: 600; }
   .login-container {width: 80%; }
