@@ -41,19 +41,33 @@ class Login extends Component {
             )
         }
         return(
-            <div className='login-container'>
-            <Card fluid>
-                <Card.Content style={{background:"#f1f1f1"}}>
-                        <Card.Header textAlign='center'>Welcome to the Would You Rather App !</Card.Header>
-                        <Card.Description textAlign='center'>Please sign in to continue</Card.Description>
-                </Card.Content>
-                <Divider fitted/>
-                <Image src ={ logo } size='small' centered />
-                <p style={{textAlign:'center',color:"#00b5ad", fontSize:'18px', fontWeight:'bold'}}>Sign In</p>
-                <Dropdown placeholder='Select User'  selection options={this.props.userDetails} onChange={this.handleDropdownSelection} />
-                <Button color='teal' style={{ justifyContent:'center',marginTop:'20px', marginBottom:'20px'}} onClick={this.handleLogin}>Sign In</Button>
+        <div className='login-container'>
+            <div className='login-card-container'>
+            <Card fluid raised style={{height:'360px'}}>
+                <div style={{height:'80px',justifyContent:'center',alignContent:'center',textAlign:'center',background:"#f1f1f1"}}>
+                    <Card.Content style={{display:'flex',flexDirection:'column'}}>
+                        <Card.Header style={{flex:'70%',marginTop:2}} className='ui header' textAlign='center'>Welcome to the Would You Rather App !</Card.Header>
+                        <Card.Description style={{flex:'30%'}}textAlign='center'>Please sign in to continue</Card.Description>
+                    </Card.Content>
+                </div>
+                <div>
+                    <Divider fitted/>
+                </div>
+                <div>
+                    <Image src ={ logo } size='small' centered />
+                </div>
+                <div>
+                    <p style={{textAlign:'center',color:"#00b5ad", fontSize:'18px', fontWeight:'bold'}}>Sign In</p>
+                </div>
+                <div>
+                    <Dropdown fluid style={{width:'95%',marginLeft:9,marginTop:10}} placeholder='Select User'  selection options={this.props.userDetails} onChange={this.handleDropdownSelection} />
+                </div>
+                <div>
+                    <Button fluid color='teal' style={{ width:'95%',justifyContent:'center',marginTop:'20px', marginBottom:'20px',marginLeft:9}} onClick={this.handleLogin}>Sign In</Button>
+                </div>
             </Card>
             </div>
+        </div>
         )
     }
 }

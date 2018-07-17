@@ -46,6 +46,12 @@ li:first-child {
   justify-content: center;
 }
 
+.login-card-container {
+  display: flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+}
+
 .dashboard-questions-container {
   margin-left: auto;
   margin-right: auto;
@@ -158,7 +164,7 @@ li:first-child {
 
 @media only screen and ( max-width: 500px ) {
   .dashboard-questions-container {width: 90%; max-width: 600; }
-  .login-container {width: 80%; }
+  .login-container {width: 90%; }
   .dashboard-list-container{width: 100%}
   .verticle-divider{left:35%}
   .verticle-divider{margin-left:10px}
@@ -176,7 +182,7 @@ li:first-child {
 
 @media only screen and ( min-width: 500px ) {
   .dashboard-questions-container {width:80%; }
-  .login-container {width: 25%; }
+  .login-container {width: 58%; }
   .dashboard-list-container{width: 100%}
   .verticle-divider{left:30%}
   .dashboard-list-question-info{left:35%}
@@ -193,7 +199,7 @@ li:first-child {
 
 @media only screen and ( min-width: 700px ) {
   .dashboard-questions-container {width:60%; }
-  .login-container {width: 25%; }
+  .login-container {width: 50%; }
   .dashboard-list-container{width: 100%}
   .verticle-divider{left:30%}
   .dashboard-list-question-info{left:35%}
@@ -210,7 +216,7 @@ li:first-child {
 
 @media only screen and (min-width:768px){
   .dashboard-questions-container {width:60%; }
-  .login-container {width: 25%; }
+  .login-container {width: 44%; }
   .dashboard-list-container{width: 100%}
   .verticle-divider{left:30%}
   .dashboard-list-question-info{left:35%}
@@ -227,7 +233,7 @@ li:first-child {
 
 @media only screen and ( min-width: 950px ) {
   .dashboard-questions-container {width:60%; }
-  .login-container {width: 25%; }
+  .login-container {width: 35%; }
   .dashboard-list-container{width: 100%}
   .verticle-divider{left:30%}
   .dashboard-list-question-info{left:35%}
@@ -244,7 +250,7 @@ li:first-child {
 
 @media only screen and (min-width: 1150px ) {
   .dashboard-questions-container {width:40%; }
-  .login-container {width: 25%; }
+  .login-container {width: 28.5%; }
   .dashboard-list-container{width: 100%}
   .verticle-divider{left:30%}
   .dashboard-list-question-info{left:35%}
