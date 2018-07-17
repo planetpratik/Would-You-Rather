@@ -3,6 +3,7 @@ import { Card, Image, Checkbox, Button, Progress,Label,Message} from 'semantic-u
 import { connect } from 'react-redux'
 import { handleAddAnswer } from '../actions/questions';
 import { withRouter } from 'react-router-dom'
+import FourZeroFour from './FourZeroFour'
 
 class Poll extends Component {
     state = {
@@ -31,7 +32,9 @@ class Poll extends Component {
         const {question,authorAvatar,isError,userName,answer} = this.props
         if(isError) {
             return (
-                <h3 style={{display:'flex',marginTop:'50px', justifyContent:'center',alignItems:'center'}}>Question Doesn't Exist !</h3>
+                <div>
+                    <FourZeroFour/>
+                </div>
             )
         }
         let votedOptionOne=false

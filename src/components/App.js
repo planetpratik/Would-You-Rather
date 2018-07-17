@@ -7,6 +7,7 @@ import Home from './Home'
 import NewQuestion from './NewQuestion'
 import LeaderBoard from './LeaderBoard'
 import Poll from './Poll'
+import FourZeroFour from './FourZeroFour'
 import PrivateRoute from './PrivateRoute'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared';
@@ -34,6 +35,7 @@ class App extends Component {
                 <PrivateRoute path='/add' exact component={NewQuestion} />
                 <PrivateRoute path='/questions/:question_id' exact component={Poll} />
                 <PrivateRoute path='/leaderboard' exact component={LeaderBoard} />
+                <Route component={FourZeroFour}/>
               </Switch>
             </div>
               }
