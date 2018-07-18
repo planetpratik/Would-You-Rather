@@ -46,7 +46,7 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({users, authedUser}) {
+function mapStateToProps({users}) {
   return {
     loading: isEmpty(users)
   }

@@ -42,7 +42,6 @@ class Home extends Component {
 }
 
 function mapStateToProps({authedUser,questions}) {
-    console.log('Questions: ',questions)
     const unansweredQuestions = Object.keys(questions)
         .filter((i) => (
             !questions[i].optionOne.votes.includes(authedUser) &&
@@ -51,7 +50,6 @@ function mapStateToProps({authedUser,questions}) {
         .sort((a,b) => (
             questions[b].timestamp - questions[a].timestamp
         ))
-        console.log('Unanswered Questions: ',unansweredQuestions)
         const answeredQuestions = Object.keys(questions)
         .filter((i) => (
             questions[i].optionOne.votes.includes(authedUser) ||
@@ -60,7 +58,6 @@ function mapStateToProps({authedUser,questions}) {
         .sort((a,b) => (
             questions[b].timestamp - questions[a].timestamp
         ))
-        console.log('Answered Questions: ',answeredQuestions)
     return {
         unansweredQuestions,
         answeredQuestions
