@@ -163,6 +163,7 @@ Your code will talk to the database via 4 methods:
 * [Official Semantic UI React Integration](https://react.semantic-ui.com/introduction)
 * [Project starter template](https://github.com/udacity/reactnd-project-would-you-rather-starter)
 * [Project Rubric](https://review.udacity.com/#!/rubrics/1567/view)
+* [Royalty Free Photos - Pexels](https://www.pexels.com)
 * [Marc Collado's Project Readme.md](https://github.com/MarcCollado/would-you-rather/blob/master/README.md)
 
 
