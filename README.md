@@ -7,6 +7,10 @@ This is the second project of the [React Developer Nanodegree](https://eu.udacit
 * [MyReads](https://github.com/planetpratik/MyReads) — React Fundamentals Project
 * [Would You Rather](https://github.com/planetpratik/Would-You-Rather) — React & Redux Project
 
+## Live Project:
+
+You can run the firebase-hosted version of this app at (https://would-you-rather-redux.firebaseapp.com/)
+
 ## Project Purpose:
 
 'Would You Rather' is a quiz based game which allows user to login, post questions and also vote on questions posted by other users. The project emphasizes using React & Redux to build the application. Redux store is used to persist information as we interact with the application.
