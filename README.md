@@ -11,6 +11,10 @@ This is the second project of the [React Developer Nanodegree](https://eu.udacit
 
 'Would You Rather' is a quiz based game which allows user to login, post questions and also vote on questions posted by other users. The project emphasizes using React & Redux to build the application. Redux store is used to persist information as we interact with the application.
 
+## Project Review:
+
+This project has been reviewed by the Udacity project evaluator. You can read the whole review [Here](https://review.udacity.com/#!/reviews/1348120/shared)
+
 ![Mobile Screens Set-1](src/assets/screenshots/Mobile-1.png "Mobile Screens Set-1")
 ![Mobile Screens Set-2](src/assets/screenshots/Mobile-2.png "Mobile Screens Set-2")
 
